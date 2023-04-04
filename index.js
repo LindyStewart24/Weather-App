@@ -39,26 +39,31 @@ search.addEventListener("submit", citySearch);
 
 function changeToFarenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector(".temperature");
-  temperatureElement.innerHTML = 78;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = farenheitTemp;
 }
 function changeToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector(".temperature");
-  temperatureElement.innerHTML = 26;
-
-  let farenheitTemp = document.querySelector("#farenheitLink");
-  farenheitTemp.addEventListener("click", changeToFarenheit);
-  var celsiusTemp = document.querySelector("#celsiusLink");
-  celsiusTemp.addEventListener("click", changeToCelsius);
+  let temperatureElement = document.querySelector("#temperature");
+  let celsiusTemp = ((farenheitTemp - 32) * 5) / 9;
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", changeToFarenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeToCelsius);
+
+let farenheitTemp = null;
 
 function getTemperature(response) {
   console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
 
+  farenheitTemp = Math.round(response.data.main.temp);
   let temperature = Math.round(response.data.main.temp);
-  let newCityTemp = document.querySelector("#farenheitTemp");
+  let newCityTemp = document.querySelector("#temperature");
   newCityTemp.innerHTML = `${temperature}`;
 
   document.querySelector("#description").innerHTML =

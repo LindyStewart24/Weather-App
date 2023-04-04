@@ -20,17 +20,22 @@
         <h1>Astatula, FL</h1>
         <div class="search">
           <form id="citySearch">
-            <input type="text" placeholder="Enter City" id="city" />
+            <input
+              type="search"
+              placeholder="Enter City"
+              id="city"
+              autocomplete="off"
+            />
             <input type="submit" value="Go" class="btn btn-primary" />
           </form>
         </div>
         <button class="currentButton" id="currentLocationTemp">Current</button>
         <div class="row">
           <div class="col-4">
-            <span class="temperature" id="farenheitTemp">78</span
+            <span class="temperature" id="temperature">78</span
             ><span class="units">
-              <a href="#" id="farenheitLink">°F </a>/
-              <a href="#" id="celsiusLink">°C</a></span
+              <a href="#" id="farenheit-link">°F </a>/
+              <a href="#" id="celsius-link">°C</a></span
             >
           </div>
           <div class="col-4">
