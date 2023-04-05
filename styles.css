@@ -72,3 +72,10 @@ img {
   text-align: center;
   padding-top: 0;
 }
+.weather-forecast-temp-max {
+  font-size: 24px;
+}
+.weather-forecast-temp-min {
+  font-size: 24px;
+  opacity: 0.65;
+}
