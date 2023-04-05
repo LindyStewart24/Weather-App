@@ -32,11 +32,13 @@
         <button class="currentButton" id="currentLocationTemp">Current</button>
         <div class="row">
           <div class="col-4">
-            <span class="temperature" id="temperature">78</span
-            ><span class="units">
-              <a href="#" id="farenheit-link">°F </a>/
-              <a href="#" id="celsius-link">°C</a></span
-            >
+            <div class="temperature" id="temperature">
+              78
+              <span class="units">
+                <a href="#" id="farenheit-link">°F </a>/
+                <a href="#" id="celsius-link">°C</a></span
+              >
+            </div>
           </div>
           <div class="col-4">
             <ul class="snapshot">
@@ -46,7 +48,7 @@
             </ul>
           </div>
           <div class="col-4">
-            <p id="currentTime">Current Time</p>
+            <p class="currentTime" id="currentTime">Current Time</p>
             <img
               src="https://openweathermap.org/img/wn/10d@2x.png"
               alt="weather"
@@ -54,22 +56,10 @@
             />
           </div>
         </div>
-        <div class="row">
-          <div class="col-2">
-            <div class="weather-forecast-day">Fri</div>
-            <img
-              src="http://openweathermap.org/img/wn/01d@2x.png"
-              alt=""
-              width="54"
-            />
-            <div class="weather-forecast-temps">
-              <span class="weather-forecast-temp-max">86°</span>
-              <span class="weather-forecast-temp-min">64°</span>
-            </div>
-          </div>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
     </div>
+
     <div class="gitHubLink">
       <a href="https://github.com/LindyStewart24/Weather-App" target="_blank">
         Open-source Code</a

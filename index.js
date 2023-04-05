@@ -58,7 +58,6 @@ celsiusLink.addEventListener("click", changeToCelsius);
 let farenheitTemp = null;
 
 function getTemperature(response) {
-  console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
 
   farenheitTemp = Math.round(response.data.main.temp);
@@ -101,3 +100,27 @@ function getCurrentLocationTemp(position) {
 
 let currentLocationButton = document.querySelector("#currentLocationTemp");
 currentLocationButton.addEventListener("click", currentLocation);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecastHTML = `
+    <div class="col-2">
+            <div class="weather-forecast-day">Fri</div>
+            <img
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt=""
+              width="54"
+            />
+            <div class="weather-forecast-temps">
+              <span class="weather-forecast-temp-max">86°</span>
+              <span class="weather-forecast-temp-min">64°</span>
+            </div>
+          </div>
+    `;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+displayForecast();
